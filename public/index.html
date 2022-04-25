@@ -33,15 +33,55 @@
       <button id="guessnav">Guess the result</button>
     </nav>
     <div id="home">
+      <h1>Flip one coin</h1>
+        <p>returns result of a coin flip</p>
+      <h2>Flip multiple coins</h2>
+        <p>returns the results of many coin flips with a summary</p>
+      <h3>Guess the result</h3>
+       <p>returns the result of a flip and guess match</p>
       
     </div>    
+    <!--Front end for single coin flip-->
     <div id="single" class="hidden">
-      
+      <!-- A 'coin' Button -->
+      <button id="coin">Flip?</button>
+      <!--A Status paragraph-->
+      <p id="active"></p>
+      <!-- A Result aragraph-->
+      <p>Results: <span id="result"></span></p>
+      <!--image-->  
+      <img src="./assets/img/coin.png" id="quarter">
     </div>
+    <!--Front end for multiple coin flips-->
     <div id="multi" class="hidden">
+      <h1>Flip Many Coins</h1>
+      <form id ="coins">
+        <label for="number">
+          <strong>How Many Coins?</strong>
+        </label>
+        <input type="number" name="number" id="number">
+        <input type="submit" value="Flip 'em!">
+      </form>
+
+      <h2>Results</h2>
+      <p id="heads"></p>
+      <p id="tails"></p>
       
     </div>
+
     <div id="guess" class="hidden">
+
+      <h1>Guess?</h1>>
+      <form id="guess_flip">
+        <label for="text">
+          <strong>What is Your Guess?</strong>
+        </label>
+        <input type="text" name="text" id="text">
+        <input type="submit" value="submit guess">
+      </form>
+
+      <h2>Results</h2>
+      <p id="guess_results"></p>
       
     </div>
 	<script src="main.js"></script>
