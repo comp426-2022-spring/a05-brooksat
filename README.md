@@ -174,7 +174,7 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-curl -X POST -H 'Content-Type: application/json' -d '{"guess":"heads"}' http://localhost:5000/app/flip/call/
+curl -X POST -H 'Content-Type: application/json' -d '{"text":"heads"}' http://localhost:5000/app/flip/call/
 ```
 
 #### Response body
@@ -201,13 +201,14 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-curl -X POST -H 'Content-Type: application/json' -d '{"number":"30"}' http://localhost:5000/app/flip/coins/`
+curl -X POST -H 'Content-Type: application/json' -d '{"number":"30"}' http://localhost:5000/app/flip/coins/
+
 ```
 
 #### Response body
 
 ```
-{"raw":["heads","heads","heads","tails","heads","heads","tails","tails","tails","heads","heads","heads","heads","heads","heads","tails","tails","heads","heads","heads","heads","heads","heads","heads","tails","heads","tails","heads","tails","heads"],"summary":{"heads":21,"tails":9}}
+{"raw":["tails","tails","heads","tails","heads","heads","tails","tails","heads","heads","tails","heads","tails","tails","heads","tails","heads","heads","tails","heads","heads","tails","tails","tails","heads","heads","tails","heads","tails","tails"],"summary":{"heads":14,"tails":16}}
 ```
 
 #### Response headers
@@ -244,116 +245,6 @@ Keep-Alive: timeout=5
 ```
 
 ### /app/log/access/ (GET)
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
-```
-
-### /app/log/error/ (GET)
-
-_Not yet implemented_
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
-```
-
-### /app/user/login/ (POST)
-
-_Not yet implemented_
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
-```
-
-### /app/user/new/ (POST)
-
-_Not yet implemented_
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
-```
-
-### /app/user/update/ (PATCH)
-
-_Not yet implemented_
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
-```
-
-### /app/user/delete/ (DELETE)
-
-_Not yet implemented_
 
 #### Request cURL
 
