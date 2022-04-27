@@ -180,7 +180,7 @@ curl -X POST -H 'Content-Type: application/json' -d '{"text":"heads"}' http://lo
 #### Response body
 
 ```
-{"call":"heads","flip":"heads","result":"win"}
+"{ call: 'heads', flip: 'tails', result: 'lose' }" 
 ```
 
 #### Response headers
@@ -188,10 +188,11 @@ curl -X POST -H 'Content-Type: application/json' -d '{"text":"heads"}' http://lo
 ```
 HTTP/1.1 200 OK
 X-Powered-By: Express
+Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 46
-ETag: W/"2e-U/q8iZ4JKqczXPIvtwiVRpEFlRc"
-Date: Thu, 07 Apr 2022 16:30:07 GMT
+Content-Length: 17
+ETag: W/"11-5UAwMS/28TalFbwwxmM2omgb8bM"
+Date: Wed, 27 Apr 2022 13:50:22 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 ```
@@ -216,10 +217,11 @@ curl -X POST -H 'Content-Type: application/json' -d '{"number":"30"}' http://loc
 ```
 HTTP/1.1 200 OK
 X-Powered-By: Express
+Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 283
-ETag: W/"11b-9dPTqGfngSPFEOq4loChIlpdSIE"
-Date: Thu, 07 Apr 2022 15:23:35 GMT
+Content-Length: 35
+ETag: W/"23-+afuo5o88z+mv6Zuxx3fVWbOQHk"
+Date: Wed, 27 Apr 2022 13:54:57 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 ```
