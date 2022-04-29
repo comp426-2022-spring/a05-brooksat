@@ -42,6 +42,13 @@ if(args.help || args.h) {
   process.exit(0)
 }
 
+if(args.log == 'false') {
+  console.log("dont create log")
+} else {
+    const accesslog = fs.createWriteStream('access.log', { flags: 'a'})
+    app.use(morgan('combined', {stream: accesslog}))
+}
+
 app.use(cors())
 // server static HTML files
 app.use(express.static('./public'))
@@ -57,8 +64,9 @@ const server = app.listen(port, () => {
 })
 //Define base endpoint
 app.get('/app/', (req, res) => {
+    var messages = 'Your API works! (200)'
     res.statusCode=200 //respond with status 200
-    res.statusMessage='OK' //respond with status message "OK"
+    res.statusMessage={'message': messages} //respond with status message "OK"
     res.writeHead(res.statusCode, {'Content-Type' : 'text/plain'})
     res.end(res.statusCode + ' ' + res.statusMessage)
 })
@@ -73,11 +81,27 @@ app.get('/app/flip/', (req, res) => {
   const flip = helper.coinFlip()
   res.status(200).json({ 'flip': flip})
 })
+// /app/flips/:number is many flips 
+app.get('/app/flips/:number', (req, res) => {
+  const flips = helper.coinFlips(req.params.number)
+  const tails = helper.countTails(flips)
+  const heads = helper.countHeads(flips)
+  res.status(200).json({'raw': flips, 'summary': {'heads': heads, 'tails': tails}})
+})
 // Flip a bunch of coins with one body variable (number)
 app.post('/app/flip/coins/', (req, res, next) => {
   const flips = helper.coinFlips(req.body.number)
   const count = helper.countFlips(flips)
   res.status(200).json({"raw":flips,"summary":count})
+})
+
+//flip guess
+
+app.get('/app/flip/call/:guess', (req, res) => {
+  var guess = req.params.guess
+  const game = helper.flipACoin(guess)
+  res.status(200).json(game)
+
 })
 
 app.post('/app/flip/call/', (req, res, next) => {

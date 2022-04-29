@@ -65,5 +65,25 @@ function coinFlip() {
   }
   
 
-
-  module.exports = {coinFlip, coinFlips, countFlips, flipACoin, win}
+  function countTails(flips) {
+    let countT = 0;
+    for(var i = 0; i < flips.length; i++) {
+      if(flips[i] == 'tails') {
+        countT++;
+      }
+    }
+  
+    return countT
+  }
+  
+  function countHeads(flips) {
+    let countH = 0;
+    for(var i = 0; i < flips.length; i++) {
+      if(flips[i] == 'heads') {
+        countH++;
+      }
+    }
+  
+    return countH
+  }
+  module.exports = {coinFlip, coinFlips, countFlips, flipACoin, win, countHeads, countTails}
